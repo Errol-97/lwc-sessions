@@ -1,0 +1,33 @@
+
+
+
+<template>
+    <lightning-input type="checkbox" label="Show Div" onchange={showDivHandler}></lightning-input>
+    <template if:true={displayDiv}>
+        <div>I am here</div>
+    </template>
+
+    <!-- HERE STARTS LAYOUT ITEMS -->
+    <div class="c-container">
+        <lightning-layout>
+            <lightning-layout-item padding="around-small" size="6">
+                <div class="header-column">
+                    <p class="field-title" title="Cities">Cites</p>
+                </div>
+                <template for:each={cityList} for:item="city"> 
+                    <p class = "slds-text-heading--medium slds-p-horizontal--small" key={city}>{city}</p>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="6">
+                <div class="header-column">
+                    <p class="field-title" title="It Dec">Iteratrive declarative</p>
+                </div>
+                <template iterator:it={cityList}>
+                    <p key={it.value}>{it.value}</p>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+
+
+</template>

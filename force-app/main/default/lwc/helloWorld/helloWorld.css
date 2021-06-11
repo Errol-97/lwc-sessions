@@ -1,0 +1,9 @@
+.hello-world{
+    background: rgb(78, 88, 122);
+    color: green;
+}
+
+/* apply to entire component */
+:host {
+    border : 4px solid grey;
+}
